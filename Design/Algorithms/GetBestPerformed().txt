@@ -1,0 +1,14 @@
+function GetBestPerformedItems()
+	highestTransfers = 0 
+	highestItem[]
+	counter = 0 
+	for ( y = 0 to dbase.getlength( inventorytable, records)  )  //loop for the amount of records in the inventory table
+		if( (dbase.get(inventorytable , y , transfercounter) > highestTransfers)  AND (counter < 5)  then
+			highestTransfers = dbase.get(inventorytable , y , transfercounter) 
+			highestItem[counter] = dbase.get(inventorytable , y , itemname)
+			counter++
+		endif
+	endfor
+	return highestItem
+endfunction	
+

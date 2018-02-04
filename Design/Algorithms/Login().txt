@@ -1,0 +1,15 @@
+procedure login()
+	authenticate = false
+	while( authenticate == false )
+		username = UserNameField.getText()
+		password = PasswordField.getText()
+		result[] = dbase.get(username , password) //returns an array of the username and its associated password in the database 
+		//result[0] = username , result[1] password
+		if( (result[0] == null) OR (result[1] != password )  ) then
+			authenticate = false
+		else 
+			authenticate = true
+		endif
+	endwhile
+endprocedure
+	

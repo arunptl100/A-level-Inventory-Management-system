@@ -1,0 +1,13 @@
+procedure SplashScreen() 
+	ItemsArray[]
+	counter = 0
+	while(ThereAreItemsToDownload)
+		ItemsArray[x] = dbase.get()
+		counter++
+	endwhile
+	populatetables(itemsArray)
+endprocedure
+	
+	
+	
+	

@@ -1,0 +1,104 @@
+﻿<Window x:Class="InventoryManagementALEVEL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InventoryManagementALEVEL"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1200.314" BorderBrush="Transparent" WindowStyle="None" AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen" MouseLeftButtonDown="WindowMouseLeftButtonDown" 
+        MinHeight="683" MinWidth="860" ResizeMode="CanResizeWithGrip">
+    <Window.Resources>
+        <Style x:Key="SideBarButtons" TargetType="Button" >
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <Grid>
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF61ABE8" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#FF1C8DEA" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="CloseButton" TargetType="Button" >
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <Grid>
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF61ABE8" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#FF1C8DEA" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+
+    <Border BorderBrush="Black" BorderThickness="0.5">
+        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="24"/>
+                <RowDefinition Height="775*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="102"/>
+                <ColumnDefinition Width="1000*"/>
+                <ColumnDefinition Width="32"/>
+                <ColumnDefinition Width="32"/>
+                <ColumnDefinition Width="32"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle x:Name="topbar_Rectangle" Fill="#FFD8D8D8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Grid.Row="0" Grid.ColumnSpan="5" MouseLeftButtonDown="topbar_Rectangle_MouseLeftButtonDown"/>
+            <ContentControl x:Name="mainContentControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="4"/>
+            <Button x:Name="close_button" Content="X" Margin="1,0,-1,0"  BorderBrush="Transparent"   Style="{StaticResource CloseButton}" BorderThickness="0" Click="close_button_Click" Grid.Row="0" Grid.Column="4" Height="24"  />
+            <Button x:Name="maximize_button" Content="▲"    BorderBrush="Transparent"   Style="{StaticResource CloseButton}" BorderThickness="0"  Grid.Row="0" Grid.Column="3" Height="24" HorizontalAlignment="Left" Width="32" Click="maximize_button_Click"  />
+            <Button x:Name="minimize_button" Content="▼"    BorderBrush="Transparent"   Style="{StaticResource CloseButton}" BorderThickness="0"  Grid.Row="0" Grid.Column="2" Height="24" HorizontalAlignment="Left" Width="32" Click="minimize_button_Click"  />
+            <TextBlock x:Name="windowtitle" HorizontalAlignment="Left" Margin="2,2,0,0" TextWrapping="Wrap" Text="INVENTORY_MAIN_SCREEN" VerticalAlignment="Top" RenderTransformOrigin="0.336,0.322" Width="539" FontSize="10.667" TextDecorations="{x:Null}" Grid.Row="0" Grid.ColumnSpan="2" Height="14"/>
+            <Grid HorizontalAlignment="Stretch" Grid.Row="1" Background="#FFB2B1B1" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="194*"/>
+                    <RowDefinition Height="194*"/>
+                    <RowDefinition Height="194*"/>
+                    <RowDefinition Height="194*"/>
+
+                </Grid.RowDefinitions>
+                <Button x:Name="Main_Menu_button"  Content="Main Menu"  VerticalAlignment="Stretch"  BorderThickness="0" FontSize="17"  Style="{StaticResource SideBarButtons}" Click="Main_Menu_button_Click" Grid.Row="0" />
+                <Button x:Name="Inventory_button" Content="Inventory"  VerticalAlignment="Stretch"  BorderThickness="0" FontSize="17"  Style="{StaticResource SideBarButtons}" Click="Inventory_button_Click" Grid.Row="1"/>
+                <Button x:Name="For_Sale_button" Content="For sale"   VerticalAlignment="Stretch"  BorderThickness="0" FontSize="17"  Style="{StaticResource SideBarButtons}" Click="For_Sale_button_Click" Grid.Row="2" />
+                <Button x:Name="Performance_button" Content="Performance"  VerticalAlignment="Stretch" BorderThickness="0" FontSize="17"  Style="{StaticResource SideBarButtons}" Click="Performance_button_Click"  Grid.Row="3" />
+            </Grid>
+        </Grid>
+
+    </Border>
+</Window>

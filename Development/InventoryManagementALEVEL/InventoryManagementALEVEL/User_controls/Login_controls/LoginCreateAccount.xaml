@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="InventoryManagementALEVEL.User_controls.Login_controls.LoginCreateAccount"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:InventoryManagementALEVEL.User_controls.Login_controls"
+             mc:Ignorable="d" 
+                  d:DesignHeight="212" d:DesignWidth="281">
+    
+    <UserControl.Resources>
+        <Style x:Key="MouseOverLabelStyle" TargetType="Button" >
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="Transparent">
+                            <ContentPresenter/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="#FF3176D8"></Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="Green"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
+    <Border BorderBrush="Black" BorderThickness="0.5">
+        <Grid>
+            <Label x:Name="CreateAccount_label" Content="Create an account" HorizontalAlignment="Left" Margin="6,10,0,0" VerticalAlignment="Top" FontSize="18.667"/>
+
+            <StackPanel HorizontalAlignment="Left" Height="137" Margin="10,45,0,0" VerticalAlignment="Top" Width="231" >
+                <TextBox x:Name="username_textBox" HorizontalAlignment="Left" Height="23" Margin="0,0,0,0" TextWrapping="Wrap" Text="USERNAME" VerticalAlignment="Top" Width="231" GotFocus="username_textBox_GotFocus"/>
+                <TextBox x:Name="firstname_textBox" HorizontalAlignment="Left" Height="23"  Margin="0,5,0,0"  TextWrapping="Wrap" Text="FIRST NAME" VerticalAlignment="Top" Width="231" GotFocus="firstname_textBox_GotFocus"/>
+                <TextBox x:Name="lastname_textBox" HorizontalAlignment="Left" Height="23" Margin="0,5,0,0" TextWrapping="Wrap" Text="LAST NAME" VerticalAlignment="Top" Width="231" GotFocus="lastname_textBox_GotFocus"/>
+                <TextBox x:Name="password_textBox" HorizontalAlignment="Left" Height="23" Margin="0,5,0,0" TextWrapping="Wrap" Text="PASSWORD" VerticalAlignment="Top" Width="231" GotFocus="password_textBox_GotFocus"/>
+                <ComboBox x:Name="role_ComboBox" HorizontalAlignment="Left" Height="23" Margin="0,5,0,0"   IsEditable="True" IsReadOnly="True" Text="ROLE" VerticalAlignment="Top" Width="231" >
+                    <ComboBoxItem>Staff</ComboBoxItem>
+                    <ComboBoxItem>Senior Staff</ComboBoxItem>
+                    <ComboBoxItem>Manager</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+            <Button x:Name="submit_button" Content="Submit" HorizontalAlignment="Left" Margin="10,185,0,0" VerticalAlignment="Top" Width="75" BorderBrush="Transparent" BorderThickness="0" Click="submit_button_Click" />
+            <Button x:Name="clear_button" Content="Clear" HorizontalAlignment="Left" Margin="90,185,0,0" VerticalAlignment="Top" Width="75" BorderBrush="Transparent" BorderThickness="0" Click="clear_button_Click" />
+        </Grid>
+
+    </Border>
+</UserControl>

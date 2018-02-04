@@ -1,0 +1,11 @@
+procedure populatetables(itemsArray[,] , table[,])
+	for(y=0 to itemsArray[].getLength(0))
+		for(x=0 to itemsArray[].getLength(1))
+			table[y,x] = itemsArray[y,x]
+		endfor
+	endfor
+endprocedure
+
+
+
+

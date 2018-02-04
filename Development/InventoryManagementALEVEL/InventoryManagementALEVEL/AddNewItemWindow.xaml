@@ -1,0 +1,23 @@
+﻿<Window x:Class="InventoryManagementALEVEL.AddNewItemWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InventoryManagementALEVEL"
+        mc:Ignorable="d"
+        Title="Add New Item" Height="212" Width="405" BorderBrush="Transparent" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" MouseLeftButtonDown="WindowMouseLeftButtonDown" ResizeMode="NoResize" >
+    <Border BorderBrush="Black" BorderThickness="1">
+        <Grid>
+            <TextBlock x:Name="maintitle_TextBlock" Text="Add new item to inventory" HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="22" TextDecorations="Underline" Margin="10,1,0,0"/>
+            <StackPanel HorizontalAlignment="Left" Height="93" Margin="10,35,0,0" VerticalAlignment="Top" Width="385">
+                <TextBox x:Name="ItemName_textBox" Height="23" Margin="0,0,0,0" TextWrapping="Wrap" Text="Item name" GotFocus="ItemName_textBox_GotFocus"/>
+                <TextBox x:Name="Quantity_textBox" Height="23"  Margin="0,10,0,0" TextWrapping="Wrap" Text="Quantity" GotFocus="Quantity_textBox_GotFocus"/>
+                <ComboBox x:Name="Category_comboBox" Margin="0,10,0,0" SelectedIndex="0"/>
+            </StackPanel>
+            <Button x:Name="add_button" Content="Add" HorizontalAlignment="Left" Margin="10,170,0,0" VerticalAlignment="Top" Width="75" Click="add_button_Click" BorderBrush="Transparent" BorderThickness="0"/>
+            <Button x:Name="reset_button" Content="Reset" HorizontalAlignment="Left" Margin="105,170,0,0" VerticalAlignment="Top" Width="75" Click="reset_button_Click" BorderBrush="Transparent" BorderThickness="0"/>
+            <Button x:Name="cancel_button" Content="Cancel" HorizontalAlignment="Left" Margin="199,170,0,0" VerticalAlignment="Top" Width="75" Click="cancel_button_Click" BorderBrush="Transparent" BorderThickness="0"/>
+
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,19 @@
+﻿<Window x:Class="InventoryManagementALEVEL.ReportShowWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InventoryManagementALEVEL"
+         xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms" 
+        mc:Ignorable="d"
+      Title="ReportShow" Height="400" Width="550" BorderBrush="Transparent" WindowStyle="None" AllowsTransparency="True" 
+        WindowStartupLocation="CenterScreen"  ResizeMode="CanResizeWithGrip" MouseLeftButtonDown="Window_MouseLeftButtonDown"  >
+
+    <Border BorderBrush="Black" BorderThickness="1">
+        <Grid>
+            <WindowsFormsHost>
+                <rv:ReportViewer x:Name="_reportViewer"/>
+            </WindowsFormsHost>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,62 @@
+﻿<Window x:Class="InventoryManagementALEVEL.logWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InventoryManagementALEVEL"
+        mc:Ignorable="d"
+     Title="Log" Height="400" Width="550" BorderBrush="Transparent" WindowStyle="None" AllowsTransparency="True" 
+        WindowStartupLocation="CenterScreen"  ResizeMode="CanResizeWithGrip" MouseLeftButtonDown="Window_MouseLeftButtonDown" >
+    <Window.Resources>
+        <Style TargetType="{x:Type DatePickerTextBox}">
+            <Setter Property="Text" Value="Show log entries after selected date" />
+            <Setter Property="IsReadOnly" Value="True"/>
+        </Style>
+    </Window.Resources>
+    <Border BorderBrush="Black" BorderThickness="1">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7"/>
+                <ColumnDefinition Width="509*"/>
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="7"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20.186"/>
+                <RowDefinition Height="22.814"/>
+                <RowDefinition Height="441*"/>
+                <RowDefinition Height="11"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="maintitle_TextBlock" Text="Action log" HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="22" TextDecorations="Underline" Margin="3,1,0,0" Grid.Column="1" Grid.RowSpan="2"/>
+            <DataGrid x:Name="log_dataGrid" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  Grid.Row="2" Grid.Column="1" Margin="3,27,2,0"
+                      AutoGenerateColumns="False" CanUserAddRows="False" HeadersVisibility="Column" CanUserSortColumns="False" IsReadOnly="True"
+                  ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" Grid.ColumnSpan="2">
+                <DataGrid.Columns>
+                    <DataGridTextColumn 
+                    IsReadOnly="False"
+                    Header="Action"
+                    Binding="{Binding Path=Action}"
+                    Width="*"
+                    />
+                    <DataGridTextColumn 
+                    IsReadOnly="False"
+                    Header="First name"
+                    Binding="{Binding Path=FirstName}"
+                    Width="*"
+                    />
+                    <DataGridTextColumn 
+                    IsReadOnly="False"
+                    Header="Date of action"
+                    Binding="{Binding Path=TimeOfAction, StringFormat=\{0:dd/MM/yy\}}"
+                    Width="*"
+                    />
+
+                </DataGrid.Columns>
+
+            </DataGrid>
+            <DatePicker x:Name="log_DatePicker" Grid.Column="1" HorizontalAlignment="Stretch" Margin="3,2,1,0"  VerticalAlignment="Top" Grid.Row="2" CalendarClosed="log_DatePicker_CalendarClosed" Grid.ColumnSpan="2"/>
+            <Button x:Name="close_button" Content="X"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="Transparent"  BorderThickness="0"  Grid.Row="0" Grid.Column="2" Height="24" Click="close_button_Click"  />
+
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,43 @@
+﻿<Window x:Class="InventoryManagementALEVEL.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InventoryManagementALEVEL"
+        xmlns:controls="clr-namespace:InventoryManagementALEVEL.User_controls.Login_controls"
+        mc:Ignorable="d"
+        Title="Login" Height="212" Width="405" BorderBrush="Transparent" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" MouseLeftButtonDown="WindowMouseLeftButtonDown" ResizeMode="NoResize" >
+    <Window.Resources>
+        <Style x:Key="MouseOverLabelStyle" TargetType="Button" >
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="Transparent">
+                            <ContentPresenter/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="#FF3176D8"></Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="Green"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Border BorderBrush="Black" BorderThickness="0.5">
+        <Grid>
+            <StackPanel HorizontalAlignment="Left" Height="211" VerticalAlignment="Top" Width="124" Background="#FFA0A0A0">
+                <Label x:Name="title_label" Content="Inventory management" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="0" FontSize="10.667" Foreground="Black" />
+                <Button x:Name="forgotten_password_left_button" Content="forgotten password?" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="10.667" FontStyle="Italic" Style="{StaticResource MouseOverLabelStyle}" Height="20" Click="forgotten_password_button_Click"/>
+                <Button x:Name="help_button" Content="Help" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="10.667" FontStyle="Italic" Style="{StaticResource MouseOverLabelStyle}" Height="20" Click="help_button_Click" />
+                <Button x:Name="about_button" Content="About" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="10.667" FontStyle="Italic" Style="{StaticResource MouseOverLabelStyle}" Height="20" Click="about_button_Click" />
+                <Button x:Name="create_button" Content="Create Account" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="10.667" FontStyle="Italic" Style="{StaticResource MouseOverLabelStyle}" Height="20" Click="create_button_Click" />
+                <Button x:Name="home_button" Content="Home" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="10.667" FontStyle="Italic" Style="{StaticResource MouseOverLabelStyle}" Height="20" Click="home_button_Click" />
+            </StackPanel>
+            <ContentControl x:Name="mainContentControl" Margin="124,0,0,0" />
+        </Grid>
+    </Border>
+</Window>

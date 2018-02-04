@@ -1,0 +1,144 @@
+﻿<UserControl x:Class="InventoryManagementALEVEL.User_controls.MainWindow_controls.MainPerformance"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+            
+             mc:Ignorable="d" 
+             d:DesignHeight="658" d:DesignWidth="625">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="9"/>
+            <ColumnDefinition Width="607*"/>
+            <ColumnDefinition Width="9"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="173"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="173"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="173"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/InventoryManagementALEVEL;component/Resources/MainPageBackImageBlueOver.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Grid Background="White" Grid.ColumnSpan="3" Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="32"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="maintitle_TextBlock" Text="Inventory management system"  FontStyle="Italic" FontSize="22" TextDecorations="Underline"  Grid.Row="0"  />
+            <TextBlock x:Name="subtitle_TextBlock" Text="Performance Analysis"  FontStyle="Italic" FontSize="19" TextDecorations="Underline" Grid.Row="1" />
+        </Grid>
+        <Grid Margin="1,2,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="White" Grid.Row="2" Grid.Column="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="238*"/>
+                <ColumnDefinition Width="53*"/>
+                <ColumnDefinition Width="12*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="124*"/>
+            </Grid.RowDefinitions>
+            <Border BorderBrush="Black" BorderThickness="1" Grid.RowSpan="2" Grid.ColumnSpan="3"/>
+            <TextBlock x:Name="maintitleTopFive_TextBlock" Text="Top five performing items this month"  FontStyle="Italic" FontSize="17" TextDecorations="Underline"  Grid.Row="0" Margin="3,0,-3,0" Grid.ColumnSpan="3"  />
+            <DataGrid x:Name="TopFive_dataGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                  AutoGenerateColumns="False" CanUserAddRows="False" HeadersVisibility="Column" CanUserSortColumns="False" 
+                  ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" Grid.Row="1" Grid.ColumnSpan="3">
+                <DataGrid.Columns>
+                    <DataGridTextColumn 
+                    IsReadOnly="True"
+                    Header="Item Name"
+                    Binding="{Binding Path=ItemName}"
+                    Width="*"
+                    />
+                    <DataGridTextColumn 
+                    IsReadOnly="True"
+                    Header="Transfers"
+                    Binding="{Binding Path=Transfers}"
+                    Width="*"
+                    />
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="topfive_refresh_button" Content="Refresh" HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="1" BorderThickness="0" BorderBrush="Transparent" VerticalAlignment="Center" Click="topfive_refresh_button_Click" />
+        </Grid>
+
+        <Grid Margin="1,2,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="White" Grid.Row="4" Grid.Column="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="238*"/>
+                <ColumnDefinition Width="53*"/>
+                <ColumnDefinition Width="12*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="124*"/>
+            </Grid.RowDefinitions>
+            <Border BorderBrush="Black" BorderThickness="1" Grid.RowSpan="2" Grid.ColumnSpan="3"/>
+            <TextBlock x:Name="maintitleTopFiveWorst_TextBlock" Text="Worst five performing items this month"  FontStyle="Italic" FontSize="17" TextDecorations="Underline"  Grid.Row="0" Margin="3,0,-3,0" Grid.ColumnSpan="3"  />
+            <Button x:Name="topfiveworst_refresh_button" Content="Refresh" HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="1" BorderThickness="0" BorderBrush="Transparent" VerticalAlignment="Center" Click="topfiveworst_refresh_button_Click" />
+            <DataGrid x:Name="TopFiveWorst_dataGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                  AutoGenerateColumns="False" CanUserAddRows="False" HeadersVisibility="Column" CanUserSortColumns="False" 
+                  ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" Grid.Row="1" Grid.ColumnSpan="3">
+                <DataGrid.Columns>
+                    <DataGridTextColumn 
+                    IsReadOnly="True"
+                    Header="Item Name"
+                    Binding="{Binding Path=ItemName}"
+                    Width="*"
+                    />
+                    <DataGridTextColumn 
+                    IsReadOnly="True"
+                    Header="Transfers"
+                    Binding="{Binding Path=Transfers}"
+                    Width="*"
+                    />
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </Grid>
+        <Grid Grid.Column="1"  Grid.Row="6" VerticalAlignment="Stretch" Background="White" HorizontalAlignment="Stretch" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="232"/>
+                <ColumnDefinition Width="125"/>
+                <ColumnDefinition Width="125"/>
+                <ColumnDefinition Width="125*"/>
+                <ColumnDefinition Width="5"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25*"/>
+                <RowDefinition Height="118*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            <Border BorderBrush="Black" BorderThickness="1" Grid.RowSpan="4" Grid.ColumnSpan="5">
+
+
+            </Border>
+            <TextBlock x:Name="maintitlePerfAnalysis_TextBlock" Text="Performance Analysis"  FontStyle="Italic" FontSize="17" TextDecorations="Underline"  Grid.Row="0" Margin="3,0,-3,0" Grid.ColumnSpan="5"  />
+            <TextBox x:Name="search_textBox" TextWrapping="Wrap" Text="Enter Item Name" Margin="4,0,71,0" Grid.Row="1" GotFocus="search_textBox_GotFocus" />
+            <Button x:Name="submit_search_button" Content="Search" HorizontalAlignment="Stretch"  Grid.Row="1" BorderThickness="0" BorderBrush="Transparent" VerticalAlignment="Center"  Margin="166,5,2,2" Click="submit_search_button_Click" />
+
+            <DataGrid x:Name="SearchResults_dataGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                  AutoGenerateColumns="False" CanUserAddRows="False" HeadersVisibility="Column" CanUserSortColumns="False" 
+                  ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" Grid.Row="2" Margin="4,5,2,5">
+                <DataGrid.Columns>
+                    <DataGridTextColumn 
+                    IsReadOnly="True"
+                    Header="Item Name"
+                    Binding="{Binding Path=ItemName}"
+                    Width="*"
+                    />
+                </DataGrid.Columns>
+
+            </DataGrid>
+            <Button x:Name="generate_graph_button"  IsEnabled="False" Content="Generate Graph" HorizontalAlignment="Stretch"  Grid.Row="1" BorderThickness="0" BorderBrush="Transparent" VerticalAlignment="Center"  Margin="5,4,4,3" Grid.Column="2" Click="generate_graph_button_Click"  />
+            <Button x:Name="selectItem_button" Content="Select Item" HorizontalAlignment="Stretch"  Grid.Row="1" BorderThickness="0" BorderBrush="Transparent" VerticalAlignment="Center"  Margin="7,5,4,2" Grid.Column="1" Click="selectItem_button_Click"  />
+            <TextBox x:Name="report_textBox" BorderBrush="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap"  Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="2" Margin="7,0,0,0" />
+        </Grid>
+
+    </Grid>
+</UserControl>

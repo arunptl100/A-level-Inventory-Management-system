@@ -1,0 +1,14 @@
+function GetWorstPerformedItems()
+	lowestTransfers = 0 
+	lowestItem[]
+	counter = 0 
+	for ( y = 0 to dbase.getlength( inventorytable, records)  )  //loop for the amount of records in the inventory table
+		if( (dbase.get(inventorytable , y , transfercounter) < highestTransfers) AND (counter < 5)  then
+			lowestTransfers = dbase.get(inventorytable , y , transfercounter) 
+			lowestItem[counter] = dbase.get(inventorytable , y , itemname)
+			counter++
+		endif
+	endfor
+	return lowersItem
+endfunction	
+

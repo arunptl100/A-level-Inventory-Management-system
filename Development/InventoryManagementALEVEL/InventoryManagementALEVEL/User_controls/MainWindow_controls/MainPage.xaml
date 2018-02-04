@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="InventoryManagementALEVEL.User_controls.MainWindow_controls.MainPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="658" d:DesignWidth="1080">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/InventoryManagementALEVEL;component/Resources/MainPageBackImageBlueOver.jpg"/>
+        </Grid.Background>
+
+        <Grid Margin="182,0,182,40" Background="White" >
+
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="33*"/>
+                <RowDefinition Height="21*"/>
+                <RowDefinition Height="160*"/>
+                <RowDefinition Height="156*"/>
+                <RowDefinition Height="154*"/>
+                <RowDefinition Height="94*"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="maintitle_TextBlock" TextAlignment="Center"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Text="Inventory management system" FontStyle="Italic" FontSize="22" TextDecorations="Underline" Grid.Row="0" Grid.RowSpan="2"/>
+            <Border BorderBrush="Black" BorderThickness="0,1" Grid.Row="1"/>
+            <Button x:Name="log_button" Content="View log" HorizontalAlignment="Center" Grid.Row="1" BorderBrush="Transparent" BorderThickness="0" VerticalAlignment="Center" Width="75" Click="log_button_Click"/>
+            <TextBlock x:Name="maininfo_textBlock" TextAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  TextWrapping="Wrap" Grid.Row="2" >
+              Welcome to inventory management system. This is a tool used to manage the inventory in the store , Best-One
+                <LineBreak/>
+                <LineBreak/>
+                <Bold><Underline>Latest news</Underline></Bold>
+            </TextBlock>
+            <TextBlock x:Name="Inventoryinfo_textBlock"  TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Grid.Row="3" >
+             <Span FontSize="14"><Bold><Underline>Inventory Page</Underline></Bold></Span>
+             <LineBreak/>In this section, you can view the shops inventory, add new items to the inventory, update and delete items.
+            </TextBlock>
+            <TextBlock x:Name="ForSaleinfo_textBlock"  TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Grid.Row="4" Grid.RowSpan="2">
+             <Span FontSize="14"><Bold><Underline>For sale Page</Underline></Bold></Span>
+             <LineBreak/>In this section, you can view the items currently for sale, add new items, update items and delete items.
+            </TextBlock>
+            <TextBlock x:Name="Performance_textBlock" TextAlignment="Center"  TextWrapping="Wrap"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Grid.Row="5" >
+             <Span FontSize="14"><Bold><Underline>Performance Page</Underline></Bold></Span>
+             <LineBreak/>In this section, you can view the performance of items and view sales predictions for a given item.
+            </TextBlock>
+           
+
+        </Grid>
+
+    </Grid>
+</UserControl>

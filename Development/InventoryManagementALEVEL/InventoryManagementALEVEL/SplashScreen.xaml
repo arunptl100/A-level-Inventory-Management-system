@@ -1,0 +1,29 @@
+﻿<Window x:Class="InventoryManagementALEVEL.SplashScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InventoryManagementALEVEL"
+        mc:Ignorable="d"
+        Title="SplashScreen" Height="212" Width="405" BorderBrush="Transparent" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" MouseLeftButtonDown="WindowMouseLeftButtonDown" ResizeMode="NoResize" >
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Duration="00:00:01" Storyboard.TargetProperty="Opacity" From="0" To="1"  />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources/inventoryBLUR.jpg"/>
+        </Grid.Background>
+        <Label x:Name="label" Content="Inventory management system" HorizontalAlignment="Left" Margin="31,57,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.5,-0.462" FontSize="24" FontWeight="Bold" Foreground="White"/>
+        <Label x:Name="label_Copy" Content="Created by Arun Patel" HorizontalAlignment="Left" Margin="128,99,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.5,-0.462" FontSize="13.333" FontWeight="Bold" Foreground="White"/>
+        <Label x:Name="label_Copy1" Content="OCR A-Level Computer Science project " HorizontalAlignment="Left" Margin="0,190,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.5,-0.462" FontSize="9.333" FontStyle="Italic" FontWeight="Bold" Foreground="White" />
+
+
+    </Grid>
+    
+</Window>

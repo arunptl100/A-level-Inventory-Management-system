@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="InventoryManagementDB" Class="InventoryManagementLINKQtoSQLClassDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ARUNPC-\SQLEXPRESS;Initial Catalog=InventoryManagementDB;Integrated Security=True" SettingsObjectName="InventoryManagementALEVEL.Properties.Settings" SettingsPropertyName="InventoryManagementDBConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AccountsTable" Member="AccountsTables">
+    <Type Name="AccountsTable">
+      <Column Name="Username" Type="System.String" DbType="NChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Role" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Association Name="AccountsTable_EventLogTable" Member="EventLogTables" ThisKey="Username" OtherKey="Username" Type="EventLogTable" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CategoryTable" Member="CategoryTables">
+    <Type Name="CategoryTable">
+      <Column Name="CategoryName" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="CategoryTable_ForSaleTable" Member="ForSaleTables" ThisKey="CategoryName" OtherKey="CategoryName" Type="ForSaleTable" />
+      <Association Name="CategoryTable_InventoryTable" Member="InventoryTables" ThisKey="CategoryName" OtherKey="CategoryName" Type="InventoryTable" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EventLogTable" Member="EventLogTables">
+    <Type Name="EventLogTable">
+      <Column Name="ActionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Action" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="NChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Role" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="TimeOfAction" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="AccountsTable_EventLogTable" Member="AccountsTable" ThisKey="Username" OtherKey="Username" Type="AccountsTable" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ForSaleTable" Member="ForSaleTables">
+    <Type Name="ForSaleTable">
+      <Column Name="ItemID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryName" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ItemName" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SellByDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="CategoryTable_ForSaleTable" Member="CategoryTable" ThisKey="CategoryName" OtherKey="CategoryName" Type="CategoryTable" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.InventoryTable" Member="InventoryTables">
+    <Type Name="InventoryTable">
+      <Column Name="ItemID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryName" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ItemName" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CategoryTable_InventoryTable" Member="CategoryTable" ThisKey="CategoryName" OtherKey="CategoryName" Type="CategoryTable" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PerformanceTable" Member="PerformanceTables">
+    <Type Name="PerformanceTable">
+      <Column Name="PeformanceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ItemName" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="January" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="February" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="March" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="April" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="May" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="June" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="July" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="August" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="September" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="October" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="November" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="December" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
